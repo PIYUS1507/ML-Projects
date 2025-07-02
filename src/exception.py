@@ -1,5 +1,5 @@
 import sys
-from logger import logger
+from src.logger import logger
 
 def error_message_details(error,error_details:sys):
     _,_,exc_tb=error_details.exc_info()
@@ -17,10 +17,3 @@ class CustomException(Exception):
         return self.error_message
     
 
-if __name__=="__main__":
-    try:
-        a=1/0
-    except Exception as e:
-
-        logger.info("the exception has been created")
-        raise CustomException(e,sys)
