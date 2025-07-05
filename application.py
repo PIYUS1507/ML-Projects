@@ -2,7 +2,9 @@ from flask import Flask,request,render_template
 from src.pipelines.predict_pipeline import CustomData,PredictPipeline
 
 
-app=Flask(__name__)
+
+application=Flask(__name__)
+app=application
 
 @app.route('/')
 def index():
@@ -35,4 +37,4 @@ def prediction_data():
 
 
 if __name__=="__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0')
